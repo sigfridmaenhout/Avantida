@@ -14,6 +14,28 @@
     function closeModal() {
    				$("#login-modal").data("kendoMobileModalView").close();
 			}
+//
+function mobileListViewPullToRefresh(e) {
+        var dataSource = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: "http://demos.telerik.com/kendo-ui/service/Products/Read",
+                    dataType: "jsonp"
+                }
+            },
+            schema: {
+                total: function () { return 77; }
+            },            
+            serverPaging: true,
+            pageSize: 40
+        });
+
+        $("#grouped-listview").kendoMobileListView({
+            dataSource: dataSource,
+            pullToRefresh: true,            
+            template: "<h3>#:ProductName#</h3><p>#:kendo.toString(UnitPrice, 'c')#</p>"         
+        });
+    }
 //Bind data to listview
   function mobileListViewDataBindInitGrouped() {
         $("#grouped-listview").kendoMobileListView({
