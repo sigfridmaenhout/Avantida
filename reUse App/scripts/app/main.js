@@ -14,12 +14,13 @@
     function closeModal() {
    				$("#login-modal").data("kendoMobileModalView").close();
 			}
-//
+//binding data webservice
 function mobileListViewPullToRefresh(e) {
         var dataSource = new kendo.data.DataSource({
+            type:"odata",
             transport: {
                 read: {
-                    url: "http://demos.telerik.com/kendo-ui/service/Products/Read",
+                    url: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Products",
                     dataType: "jsonp"
                 }
             },
