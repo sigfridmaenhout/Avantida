@@ -25,7 +25,8 @@ function mobileListViewPullToRefresh(e) {
             },
             schema: {
                 total: function () { return 77; }
-            },            
+            },   
+            group:"UnitPrice",
             serverPaging: true,
             pageSize: 40
         });
@@ -33,7 +34,8 @@ function mobileListViewPullToRefresh(e) {
         $("#grouped-listview").kendoMobileListView({
             dataSource: dataSource,
             pullToRefresh: true,            
-            template: "<h3>#:ProductName#</h3><p>#:kendo.toString(UnitPrice, 'c')#</p>"         
+            template: "<span>#:ProductName#</span><p>#:kendo.toString(UnitPrice, 'c')#</p>",
+            headerTemplate: "<h2>Reference No: ${value} </h2>"
         });
     }
 //Bind data to listview
