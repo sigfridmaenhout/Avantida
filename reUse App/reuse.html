@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+    <title>ReUse</title>
+</head>
+<body>
+    <div id="forms" data-role="view" data-title="Request reUse" data-init="initForm" data-use-native-scrolling="false" data-layout="default">
+    <form action="#">
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label>Container no.
+                    <input type="text" value="Text" />
+                </label>
+            </li>
+            <li>
+                <label>Export ref.
+                    <input type="text" value="Text" />
+                </label>
+            </li>
+            <li>
+                <label>Client ref.
+                    <input type="text" value="Text" />
+                </label>
+            </li>
+            <li>
+                <label>Place of stuffing
+                    <select id="dropdown1">
+                        <option value="First Option">Empty</option>
+                        <option value="Second Option">Empty</option>
+                        <option value="Third Option">Empty</option>
+                        <option value="Fourth Option">Empty</option>
+                        <option value="First Option">Empty</option>
+                    </select>
+                    
+                </label>
+            </li> 
+            <li>
+                <label>
+                    <select id="dropdown2">
+                        <option value="First Option">Empty</option>
+                        <option value="Second Option">Empty</option>
+                        <option value="Third Option">Empty</option>
+                    </select>
+                    
+                </label>
+            </li>        
+            <li>
+                <label>
+                    Reuse date
+                    <input type="date" value="2012-03-22" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Import delivery date
+                    <input type="date" value="2012-03-22" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Comment
+                    <textarea style="resize: none">Multiline
+Text</textarea>
+                </label>
+            </li>
+            
+        </ul>
+    </form>
+         <a data-role="button"  href="detail.html" style="float:right;" class="button">Request</a>
+</div>
+<script>
+    function initForm() {
+        var body = $(".km-pane");
+
+        if (kendo.ui.DropDownList) {
+            $("#dropdown1").kendoDropDownList({
+                // The options are needed only for the desktop demo, remove them for mobile.
+                popup: { appendTo: body },
+                animation: { open: { effects: body.hasClass("km-android") ? "fadeIn" : body.hasClass("km-ios") || body.hasClass("km-wp") ? "slideIn:up" : "slideIn:down" } }
+            });
+            $("#dropdown2").kendoDropDownList({
+                // The options are needed only for the desktop demo, remove them for mobile.
+                popup: { appendTo: body },
+                animation: { open: { effects: body.hasClass("km-android") ? "fadeIn" : body.hasClass("km-ios") || body.hasClass("km-wp") ? "slideIn:up" : "slideIn:down" } }
+            });
+        }
+    }
+</script>
+
+<style scoped>
+    #forms input:not([type=checkbox]):not([type=radio]),
+    #forms select,
+    #forms .k-dropdown
+    {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 50%;
+    }
+    #forms label {
+        display: inline-block;
+        width: 100%;
+    }
+</style>
+
+
+<script>
+    var app = new kendo.mobile.Application(document.body);
+</script>
+</body>
+</html>
