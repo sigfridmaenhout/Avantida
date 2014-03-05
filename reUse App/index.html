@@ -13,38 +13,156 @@
 	<script src="scripts/lib/everlive.all.min.js"></script>
  	<script src="scripts/app/main.js"></script>    
     
-    
-
 </head>
+    
 <body>     
     <!--home screen-->    
         <div data-role="view" id="home" data-init="mobileListViewPullToRefresh" data-transition="" data-title="Home" data-layout="default">
-     		<ul id="grouped-listview" data-template="tmp" data-source="dataSource">
+            <div id="login">
+            <h1 style="text-align:center;">
+                <!--<img src="images/apptitle.png">-->
+                Avantida              
+            </h1>
+             <h2 style="text-align:center;">
+                    ReUse
+             </h2>
+            <form id="login-form" action="#" style="margin-top:50px;">
+                <ul data-role="listview" data-style="inset">
+                    <li class="username">
+                    	<label>
+                        Username
+                             <input type="text" value="username" />
+                        </label>
+                    </li>
+                    <li class="password">
+                    	<label>
+                        Password
+                             <input type="password" value="password" />
+                        </label>
+                    </li>                 
+                </ul>
+            </form>
+            <div style="text-align:center">
+            		
+                		<a class="singleButton" data-role="button" data-click="onClick" 
+                   		style="width:80%;height:40px;position: relative;
+    					margin: 0 -1px;
+    					padding: .6em 0;
+    					border: 0 none;
+    					font-size: 1.2rem;
+    					background-color: #191919;
+    					color:white;">Login</a>
+                
+            		
+                </div>
+            </div>         
+            <ul id="grouped-listview" data-template="tmp" data-source="dataSource">
            
-       </ul>  
-            <a href="#login-modal" data-rel="modalview" 
-               data-role="button" data-click="openModal" style="float:right;" class="button">Open Login</a>
+            </ul>            
 		</div> 
-    <div data-role="modalview" id="login-modal" style="width: 200px; height: 200px;" data-modal="false">
-  		<form action="#">
-        <ul data-role="listview" data-style="inset">
+    <!--credit screen--> 
+     <div id="credit" data-role="view" data-title="Credits" data-layout="default">
+         <ul id="credit-listview" data-role="listview" data-style="inset">
             <li>
                 <label>Username
+                    <label id="username" style="float:right;"></label>
+                </label>
+            </li>
+           <li>
+                <label>Company
+                    <label id="company" style="float:right;"></label>
+                </label>
+            </li>
+           <li>
+                <label>Credits
+                    <label id="credits" style="float:right;"></label>
+                </label>
+            </li>
+           <li style="text-align:center;">
+               <label>
+					Attention! Buy credits on the portal website
+                   "https://portal.avantida.com"
+               </label>
+           </li>
+       </ul>
+    </div>
+    <!--reuse screen-->
+    <div id="reuse" data-role="view" data-title="Request reUse" data-init="initForm" data-use-native-scrolling="false" data-layout="default">
+    <form action="#">
+        <ul id="reuse-listview" data-role="listview" data-style="inset">
+            <li>
+                <label>Container no.
                     <input type="text" value="Text" />
                 </label>
             </li>
             <li>
-                <label>Password
-                    <input type="password" value="Text" />
+                <label>Export ref.
+                    <input type="text" value="Text" />
                 </label>
             </li>
-            <li>       
-                <!--<input type="submit" value="Login" data-click="closeModal">-->
+            <li>
+                <label>Client ref.
+                    <input type="text" value="Text" />
+                </label>
             </li>
-            </ul>
-        </form>
-        <a data-role="button" href="#home" data-click="closeModal" style="float:right;" class="button">Login</a>
-		</div>
+            <li>
+                <label>Place of stuffing
+                    <select id="dropdown1">
+                        <option value="First Option">Empty</option>
+                        <option value="Second Option">Empty</option>
+                        <option value="Third Option">Empty</option>
+                        <option value="Fourth Option">Empty</option>
+                        <option value="First Option">Empty</option>
+                    </select>
+                    
+                </label>
+            </li> 
+            <li>
+                <label>
+                    <select id="dropdown2">
+                        <option value="First Option">Empty</option>
+                        <option value="Second Option">Empty</option>
+                        <option value="Third Option">Empty</option>
+                    </select>
+                    
+                </label>
+            </li>        
+            <li>
+                <label>
+                    Reuse date
+                    <input type="date" value="2012-03-22" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Import delivery date
+                    <input type="date" value="2012-03-22" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Comment
+                    <textarea style="resize: none; height:50px">Multiline
+					Text</textarea>
+                </label>
+            </li>          
+        </ul>
+        
+    </form>
+         <div style="text-align:center">     
+         	
+         		<a id="request-button" data-role="button"  href="detail.html" 
+                   style="width:80%;height:40px;position: relative;
+    					margin: 0 -1px;
+                        margin-top:15px;
+    					padding: .6em 0;
+    					border: 0 none;
+    					font-size: 1.2rem;
+    					background-color: #191919;
+    					color:white;">Request</a>
+             
+        </div>
+</div>
     <!--TEMPLATE-->
     <section data-role="layout" data-id="default">
         <header data-role="header">
@@ -56,16 +174,23 @@
         </header>
         <!--View content will render here-->
         <footer data-role="footer"> 
-            <div data-role="tabstrip">
+            <div id="#tabstrip"  data-role="tabstrip">
                 <a href="#home"><img src="images/home.png"/>Home</a>
-                <a href="reuse.html"><img src="images/reuse.png"/>ReUse</a>
-                 <a href="credit.html"><img src="images/credit.png"/>Credits</a>
+                <a href="#reuse"><img src="images/reuse.png"/>ReUse</a>
+                 <a href="#credit"><img src="images/credit.png"/>Credits</a>
             </div> 
         </footer>
     </section>
     
     
-</body>
     
+    
+    
+    
+    
+    
+
+</body>
+   
 </html>
 

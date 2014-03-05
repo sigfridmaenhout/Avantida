@@ -102,6 +102,43 @@
 .km-wp .km-view .km-content .km-listgroupinset .km-group-title {
     color: rgb(25, 25, 25);
 }
+.singleButton{
+            width:80%;height:40px;position: relative;
+    					margin: 0 -1px;
+    					padding: .6em 0;
+    					border: 0 none;
+    					font-size: 1.2rem;
+    					background-color: #191919;
+    					color:white;
+        }
+#login-form .username,
+#login-form .password {
+    position: relative;
+        height:40px;
+}
+
+#login-form .username:before,
+#login-form .password:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: .75em;
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin-top: -.5em;
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+#login-form .username:before {
+    background-image: url(images/icon-username.png);
+}
+
+#login-form .password:before {
+    background-image: url(images/icon-password.png);
+} 
  /*       .button {
     display: inline-block;
     text-align: center;
@@ -117,7 +154,7 @@
     color: #ffffff;
     text-decoration: none;
 }*/
-.km-android .km-button, .km-ios7 .km-button ,.km-ios .km-button{
+/*.km-android .km-button, .km-ios7 .km-button ,.km-ios .km-button{
     border: 1px solid #191919;
     background: #191919;
     background: -webkit-gradient(linear, left top, left bottom, from(#191919), to(#1c1c1c));
@@ -126,7 +163,7 @@
     color: #ffffff;
     text-decoration: none;
      height:35px;
-        }
+        }*/
 /*.button:active {
     background: #171717;
     background: -webkit-gradient(linear, left top, left bottom, from(#171717), to(#171717));
@@ -134,7 +171,7 @@
     background: linear-gradient(to bottom, #171717, #171717);
 }*/
 
-.button:before{
+/*.button:before{
     content:  "\0000a0";
     display: inline-block;
     height: 24px;
@@ -146,4 +183,5 @@
     left: -5px;
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADWElEQVRIib1VX4hUZRT/ne/77p27szOX3SZXZCVcobeggaBwMRAiH4SVEMt8cI0MH3owfQgSigqD0HoJNIIteijxwR4EQRTzwVCCFJQCk6gHdV03tx33z4zpzr3n9PB99843y6wOKB04nPN9c8/vd+Z3zp0B/idTS+SPbNpF8pwdCQEQPx9YZfqe21BcB6A+ezutu8/Ea6xTnl880KMSqUNXn7r03T9D8v3U0Oym3fH6buoyOfhh3tunTVRWqzkFSCPesu/J41s+6B9V+sH1GUGn2DYXEYBTgFnADHAq4eb3+r/Z9fXA+0q1Pd+Wdxru4rv8bIGtAwCnol58vfTxgXODY8VYhR1qQdmhVFHF4a3lnUPV8IWemJVWBqqnB7oHCAyhFEDFA7zRBGSCkBAVCUS2RWOAG783T366eXLrrT+bMx6JJSj1q+LowYHT5Sf0sAkIxgA6AIwhGEOt3MWoSChEBFIAEaA1oDRh+mZy+cBrf4/8ceHehJuBlag6Uhot9OphYV9jyjUXX3sWEAF2C+0milivDJrqJ2dW/PzsS9EzmUQKAOLlZg2zIHX62igWNAVS9vRnOAIChHIphG0MIrXyoxMrzr78Znktsi0ShsmKW+DIwcURMUsOJN5rZHPJ74hU3xv7K4fCiKxEtnvrGVEWM3Bh68wtZIEsel9bhyAiQ9pJJOKDSvu+M8DSOgtTq3tPIv8sIvVv351+535D2ABA876MSwbGAItYIG51ng2Sxc4q8HomNwPSguY9uf3FjqmR80frv+RDvvJjYyxNZE5EHCDZrp2LSE4AAdJEPHgnLwOzU3x138bJNeeP1i86bPtL0qhxbX4qPbf86bAalVRFKYjWxNqAtSbnYK1IkSZoDRQiBQKQNG33dyaTnz5cP7Hhr0sL494O5yLanTVA3yCVygYKAYBCthU2vnVw5fFiTGtNQOhfppAsCEgB139b+GH/q5PbGzN818NjADD+jDgBatekXkNnSxMk4iSbn2GEBcKvZxqfj709vfffec7+RzJTPgEvgdlm4r4NEYGIkrNH5vYc3lv7ktOl6zMCn9nvpC2vjTcn4koIUnL32Gd3tp36au6Y15xaIs8vHurxMh0//0rvplXVcHW3Nd0o81hsMWM3ObrJ/wPYtNHyIQ9i+gAAAABJRU5ErkJggg==") no-repeat left center transparent;
     background-size: 100% 100%;
-}
+}*/
+        
